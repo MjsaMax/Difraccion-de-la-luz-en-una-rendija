@@ -268,3 +268,4 @@ if __name__ == "__main__":
 print(
     "Simulation code has been defined. Run the simulation by creating an instance of LaserDiffractionSimulation and calling its run method.")
 
+# un ejemplo de modificacion
