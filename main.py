@@ -313,5 +313,5 @@ class LaserDiffractionSimulation:
 if __name__ == "__main__":
     app = LaserDiffractionSimulation()
     app.run()
-
+#Falta redimensionar los paneles
 print("Simulation code has been updated. Run the simulation by creating an instance of LaserDiffractionSimulation and calling its run method.")
