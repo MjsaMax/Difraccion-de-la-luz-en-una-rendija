@@ -227,7 +227,7 @@ class SimulacionDifraccionLaser:
             color = self.intensidad_a_color(intensidad)
             self.lienzo_pantalla.create_line(10, py, ancho - 10, py, fill=color)
 
-        # Dibujar el punto ajustable
+        # Dibujar el punto ajustable.
         y_pixel = int(alto / 2 - self.posicion_y.get() / escala_y)
 
 
