@@ -3,22 +3,23 @@ import math
 
 class SimulacionDifraccionLaser:
     def __init__(self):
+        #ACreacion del titulo de la ventana
         self.raiz = tk.Tk()
         self.raiz.title("Simulador de Láser con Lente y Rendija")
         self.raiz.configure(bg='black')
 
-        # Constantes físicas
+        #TConstantes físicas
         self.longitud_onda = 633e-9  # Longitud de onda del láser HeNe (rojo)
         self.k = 2 * math.pi / self.longitud_onda
         self.ancho_haz = 2  # Ancho del haz láser en mm
         self.distancia_focal = 50  # Distancia focal fija de la lente (cm)
 
-        # Parámetros ajustables
+        #AParámetros ajustables
         self.ancho_rendija = tk.DoubleVar(value=0.1)  # Ancho de la rendija (mm)
         self.distancia_pantalla = tk.DoubleVar(value=100)  # Distancia a la pantalla (cm)
         self.posicion_y = tk.DoubleVar(value=0)  # Posición Y en la pantalla (mm)
 
-        # Crear frames para los paneles
+        #ACrear frames para los paneles
         self.marco_montaje = tk.Frame(self.raiz, bg='black')
         self.marco_montaje.pack(side=tk.LEFT, padx=10, pady=10)
 
@@ -28,7 +29,7 @@ class SimulacionDifraccionLaser:
         self.marco_distribucion = tk.Frame(self.raiz, bg='black')
         self.marco_distribucion.pack(side=tk.BOTTOM, fill=tk.X, expand=True, padx=10, pady=10)
 
-        # Canvas para el montaje óptico y la pantalla
+        #ACanvas para el montaje óptico y la pantalla
         self.lienzo_montaje = tk.Canvas(self.marco_montaje, width=600, height=400, bg='black')
         self.lienzo_montaje.pack(pady=10)
 
@@ -36,14 +37,14 @@ class SimulacionDifraccionLaser:
         self.lienzo_pantalla.pack(pady=10)
         self.lienzo_pantalla.bind("<Motion>", self.mostrar_intensidad)
 
-        # Canvas para la distribución de intensidad
+        #ACanvas para la distribución de intensidad
         self.lienzo_distribucion = tk.Canvas(self.marco_distribucion,
                                              width=self.raiz.winfo_screenwidth(),
                                              height=200,
                                              bg='black')
         self.lienzo_distribucion.pack(fill=tk.X, expand=True, pady=10)
 
-        # Etiquetas
+        #AEtiquetas
         tk.Label(self.marco_montaje,
                  text="Montaje Experimental",
                  bg='black',
@@ -67,7 +68,7 @@ class SimulacionDifraccionLaser:
 
         self.crear_controles()
         self.actualizar_simulacion()
-
+    #APP
     def crear_controles(self):
         marco_control = tk.Frame(self.raiz, bg='black')
         marco_control.pack(side=tk.BOTTOM, pady=10)
