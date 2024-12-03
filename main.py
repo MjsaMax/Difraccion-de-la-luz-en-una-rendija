@@ -27,7 +27,7 @@ class LaserDiffractionSimulation:
         self.screen_frame.pack(side=tk.RIGHT, padx=10, pady=10)
 
         self.distribution_frame = tk.Frame(self.root, bg='black')
-        self.distribution_frame.pack(side=tk.BOTTOM, padx=10, pady=10)
+        self.distribution_frame.pack(side=tk.BOTTOM, fill=tk.X, expand=True, padx=10, pady=10)
 
         # Canvas para el montaje óptico y la pantalla
         self.setup_canvas = tk.Canvas(self.setup_frame, width=600, height=400, bg='black')
@@ -38,8 +38,11 @@ class LaserDiffractionSimulation:
         self.screen_canvas.bind("<Motion>", self.show_intensity)
 
         # Canvas para la distribución de intensidad
-        self.distribution_canvas = tk.Canvas(self.distribution_frame, width=600, height=200, bg='black')
-        self.distribution_canvas.pack(pady=10)
+        self.distribution_canvas = tk.Canvas(self.distribution_frame,
+                                             width=self.root.winfo_screenwidth(),
+                                             height=200,
+                                             bg='black')
+        self.distribution_canvas.pack(fill=tk.X, expand=True, pady=10)
 
         # Etiquetas
         tk.Label(self.screen_frame,
@@ -231,7 +234,7 @@ class LaserDiffractionSimulation:
 
     def draw_intensity_distribution(self):
         """Dibuja la distribución de intensidad usando tkinter"""
-        width = 600
+        width = self.distribution_canvas.winfo_width()  # Get actual canvas width
         height = 200
         margin = 20
         x_scale = (width - 2 * margin) / 20  # 20mm range centered at 0
@@ -246,8 +249,8 @@ class LaserDiffractionSimulation:
         self.distribution_canvas.create_line(margin, height - margin, margin, margin, fill='white')  # Eje Y
 
         # Etiquetas de los ejes
-        self.distribution_canvas.create_text(width / 2, height - 5, text="Posición Y (mm)", fill='white')
-        self.distribution_canvas.create_text(10, height / 2, text="Intensidad Relativa", angle=90, fill='white')
+        self.distribution_canvas.create_text(width / 2, height - 5, text="", fill='white')
+        self.distribution_canvas.create_text(10, height / 2, text="", angle=90, fill='white')
 
         # Calcular y dibujar la distribución de intensidad
         points = []
@@ -255,11 +258,11 @@ class LaserDiffractionSimulation:
             y = (x - width / 2) / x_scale  # Convertir pixel a mm
             intensity = self.calculate_diffraction_pattern(y * 1e-3)  # Convertir mm a m
             y_pixel = height - margin - int(intensity * y_scale)
-            points.append(x)
-            points.append(y_pixel)
+            points.extend([x, y_pixel])
 
-        # Dibujar la curva de intensidad
-        self.distribution_canvas.create_line(points, fill='red', smooth=True)
+        # Asegurarse de que hay al menos dos puntos antes de dibujar la línea
+        if len(points) >= 4:
+            self.distribution_canvas.create_line(points, fill='red', smooth=True)
 
         # Dibujar marcas en el eje X
         for i in range(-10, 11, 5):
@@ -277,7 +280,6 @@ class LaserDiffractionSimulation:
         current_y = self.y_position.get()
         x_current = margin + (current_y + 10) * x_scale
         self.distribution_canvas.create_line(x_current, margin, x_current, height - margin, fill='yellow', dash=(4, 4))
-
     def show_intensity(self, event):
         """Muestra la intensidad en el punto donde está el cursor"""
         width = 400
