@@ -23,7 +23,7 @@ La simulación permite a los usuarios explorar el fenómeno de difracción de la
 
 El proyecto incluye tres GIFs animados que ilustran aspectos clave de la simulación:
 
-1. `montaje_experimental.gif`: Muestra el montaje óptico completo, incluyendo el láser, la lente, la rendija y la pantalla.
+1. `Recording 2024-12-05 085055.mp4`: Muestra el montaje óptico completo, incluyendo el láser, la lente, la rendija y la pantalla.
 2. `patron_difraccion.gif`: Ilustra cómo cambia el patrón de difracción en la pantalla al variar el ancho de la rendija.
 3. `distribucion_intensidad.gif`: Presenta la gráfica de distribución de intensidad y cómo se actualiza en tiempo real.
 
