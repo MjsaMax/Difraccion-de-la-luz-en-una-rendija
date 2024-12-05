@@ -44,5 +44,5 @@ Para una explicación más profunda de la teoría física detrás de la simulaci
 Para ejecutar la simulación:
 
 1. Asegúrese de tener Python 3.x instalado en su sistema.
-2. Clone este repositorio o descargue el archivo [simulacion_difraccion_laser.py](./simulacion_difraccion_laser.py).
+2. Clone este repositorio o descargue el archivo [main.py](./main.py).
 3. Ejecute el script con el comando:
