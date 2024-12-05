@@ -31,7 +31,7 @@ Estos GIFs proporcionan una vista rápida y clara de las principales caracterís
 
 ## Código Fuente
 
-El código fuente principal de la simulación se encuentra en el archivo `simulacion_difraccion_laser.py`. Este archivo contiene la clase `SimulacionDifraccionLaser`, que implementa toda la lógica de la simulación y la interfaz gráfica.
+El código fuente principal de la simulación se encuentra en el archivo `main.py`. Este archivo contiene la clase `SimulacionDifraccionLaser`, que implementa toda la lógica de la simulación y la interfaz gráfica.
 
 Características principales del código:
 
