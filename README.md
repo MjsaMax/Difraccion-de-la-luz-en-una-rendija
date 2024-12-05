@@ -5,7 +5,6 @@ Este proyecto contiene una simulación interactiva de difracción láser utiliza
 ## Contenido del Proyecto
 
 - [Descripción](#descripción)
-- [Recursos Visuales](#recursos-visuales)
 - [Código Fuente](#código-fuente)
 - [Documentación Detallada](#documentación-detallada)
 - [Instalación y Uso](#instalación-y-uso)
