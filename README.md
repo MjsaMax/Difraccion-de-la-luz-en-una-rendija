@@ -42,7 +42,7 @@ Características principales del código:
 
 ## Documentación Detallada
 
-Para una explicación más profunda de la teoría física detrás de la simulación y detalles técnicos de la implementación, consulte el archivo [documentacion_difraccion_laser.pdf](./documentacion_difraccion_laser.pdf). Este documento incluye:
+Para una explicación más profunda de la teoría física detrás de la simulación y detalles técnicos de la implementación, consulte el archivo [Difraccion_de_la_luz_en_una_rendija.pdf](./Difraccion_de_la_luz_en_una_rendija.pdf). Este documento incluye:
 
 - Fundamentos teóricos de la difracción de la luz
 - Derivación de las fórmulas utilizadas en la simulación
