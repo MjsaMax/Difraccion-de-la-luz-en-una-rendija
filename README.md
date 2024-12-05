@@ -19,16 +19,6 @@ La simulación permite a los usuarios explorar el fenómeno de difracción de la
 2. El patrón de difracción en la pantalla
 3. La distribución de intensidad de la luz difractada
 
-## Recursos Visuales
-
-El proyecto incluye tres GIFs animados que ilustran aspectos clave de la simulación:
-
-1. [Montaje Experimental](./montaje_experimental.gif): Muestra el montaje óptico completo, incluyendo el láser, la lente, la rendija y la pantalla.
-2. [Patrón de Difracción](./patron_difraccion.gif): Ilustra cómo cambia el patrón de difracción en la pantalla al variar el ancho de la rendija.
-3. [Distribución de Intensidad](./distribucion_intensidad.gif): Presenta la gráfica de distribución de intensidad y cómo se actualiza en tiempo real.
-
-Estos GIFs proporcionan una vista rápida y clara de las principales características de la simulación. Haga clic en los enlaces para ver cada GIF.
-
 ## Código Fuente
 
 El código fuente principal de la simulación se encuentra en el archivo [main.py](./main.py). Este archivo contiene la clase `SimulacionDifraccionLaser`, que implementa toda la lógica de la simulación y la interfaz gráfica.
